@@ -1,11 +1,51 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Button from "../components/Button.astro";
+import Github from "../components/icons/Github.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import Experiencia from "../components/Experiencia.astro";
+import Project from "../components/Project.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <section id="home" class="max-w-md space-y-4 my-48">
+    <h1 class="text-5xl font-bold">¡Hola! Soy Axel Huerta</h1>
+    <p>
+      Estudiante de Licenciatura en Computación en la <span
+        class="font-semibold text-green-200"
+        >Universidad Autónoma Metropolitana</span
+      >, apasionado por la programación y el desarrollo web.
+    </p>
+
+    <!-- links -->
+    <div class="flex gap-2">
+      <a href="https://github.com/AxelHuerta" target="_blank">
+        <Button>
+          <span class="flex items-center gap-1">
+            <Github class="w-4 h-4" /> Github
+          </span>
+        </Button>
+      </a>
+      <a href="https://www.linkedin.com/in/axelhuerta/" target="_blank">
+        <Button>
+          <span class="flex items-center gap-1">
+            <LinkedIn class="w-4 h-4" />
+            LinkedIn
+          </span>
+        </Button>
+      </a>
+    </div>
+  </section>
+
+  <!-- Experiencia -->
+  <section id="experience" class="my-48">
+    <h2 class="text-3xl font-bold my-4">Experiencia</h2>
+    <Experiencia />
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyects" class="mt-24">
+    <h2 class="text-3xl font-bold my-4">Proyectos</h2>
+    <Project />
+  </section>
 </Layout>

@@ -1,0 +1,25 @@
+---
+import ExperienciaItem from "./ExperienciaItem.astro";
+
+const EXPERIENCIA = [
+  {
+    date: "Enero 2024 - Presente",
+    title: "Desarrollador front end",
+
+    place: "UAM-I",
+    description:
+      "Colaboré en el desarrollo de una aplicación web para la gestión integral de insumos, pacientes y expedientes médicos.",
+  },
+  {
+    date: "Febrero 2024 - Agosto 2024",
+    title: "Desarrollador back end",
+    place: "UAM-I",
+    description:
+      "Colaboré en el desarrollo de un sistema de gestión de préstamos de dispositivos, para reemplazar un software obsoleto.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+  {EXPERIENCIA.map((item) => <ExperienciaItem {...item} />)}
+</ol>

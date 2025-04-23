@@ -1,0 +1,106 @@
+---
+import { Image } from "astro:assets";
+import boliUAMImage from "../assets/boliUAM.png";
+import waifu from "../assets/waifu.png";
+import experimento from "../assets/experimento.png";
+import React from "./icons/React.astro";
+import Node from "./icons/Node.astro";
+import Button from "./Button.astro";
+import Github from "./icons/Github.astro";
+import Link from "./icons/Link.astro";
+
+const TAGS = {
+  REACT: {
+    name: "React",
+    class: "bg-blue-700",
+    icon: React,
+  },
+  NODE: {
+    name: "Node",
+    class: "bg-green-900",
+    icon: Node,
+  },
+};
+
+const projects = [
+  {
+    name: "boliUAM",
+    description:
+      "Aplicación web para que los alumnos de mi carrera lleven un registro de su progreso académico, facilitando la visualización de las materias aprobadas y pendientes.",
+    image: boliUAMImage,
+    code: "https://github.com/AxelHuerta/boliUAM",
+    preview: "https://github.com/AxelHuerta/boliUAM",
+    badages: [TAGS.REACT],
+  },
+  {
+    name: "Plataforma de Experimentación Psicológica – Colaboración con Carrera de Psicología Social",
+    description:
+      "Aplicación web para un experimento psicológico en el que los participantes respondían preguntas y podían ver las respuestas de otros usuarios en tiempo real.",
+    image: experimento,
+    code: "https://github.com/AxelHuerta/metodologia-admin",
+    badages: [TAGS.REACT, TAGS.NODE],
+  },
+  {
+    name: "Waifu Randomaizer",
+    description:
+      "Aplicación web interactiva que consume la Waifu API para mostrar imágenes aleatorias de waifus anime.",
+    image: waifu,
+    code: "https://github.com/AxelHuerta/boliUAM",
+    preview: "https://boliuam.vercel.app/",
+    badages: [TAGS.REACT],
+  },
+];
+---
+
+<section class="space-y-12">
+  {
+    projects.map((project) => (
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="relative overflow-clip rounded-2xl">
+          <Image
+            src={project.image}
+            alt={project.name}
+            class="md:max-w-xs rounded-2xl border-[1px] border-neutral-800 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-120"
+          />
+        </div>
+        <div class="space-y-4">
+          <h3 class="text-xl font-bold text-[#6180fe]">{project.name}</h3>
+          <div class="flex gap-2">
+            {project.badages.map((badage) => (
+              <span
+                class={`flex items-center gap-1 px-2 py-1 text-xs font-medium text-white ${badage.class}  rounded-full`}
+              >
+                <badage.icon class="w-4 h-4" />
+                {badage.name}
+              </span>
+            ))}
+          </div>
+          <p class="text-pretty">{project.description}</p>
+          <div class="flex gap-3">
+            {project.code && (
+              <a href={project.code}>
+                <Button>
+                  <span class="flex items-center gap-1 cursor-pointer">
+                    <Github class="w-4 h-4" />
+                    Código
+                  </span>
+                </Button>
+              </a>
+            )}
+
+            {project.preview && (
+              <a href={project.preview}>
+                <Button>
+                  <span class="flex items-center gap-1 cursor-pointer">
+                    <Link class="w-4 h-4" />
+                    Preview
+                  </span>
+                </Button>
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</section>
