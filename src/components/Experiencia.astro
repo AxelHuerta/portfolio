@@ -1,5 +1,20 @@
 ---
-import ExperienciaItem from "./ExperienciaItem.astro";
+import Nextjs from "./icons/Nextjs.astro";
+import Laravel from "./icons/Laravel.astro";
+
+const TAGS = {
+  NEXTJS: {
+    name: "Next.js",
+    class: "bg-black border-[1px] border-gray-700",
+    icon: Nextjs,
+  },
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-black border-[1px] border-gray-700",
+    icon: Laravel,
+  },
+};
+
 
 const EXPERIENCIA = [
   {
@@ -9,6 +24,7 @@ const EXPERIENCIA = [
     place: "UAM-I",
     description:
       "Colaboré en el desarrollo de una aplicación web para la gestión integral de insumos, pacientes y expedientes médicos.",
+    badages: [TAGS.NEXTJS],
   },
   {
     date: "Febrero 2024 - Agosto 2024",
@@ -16,10 +32,47 @@ const EXPERIENCIA = [
     place: "UAM-I",
     description:
       "Colaboré en el desarrollo de un sistema de gestión de préstamos de dispositivos, para reemplazar un software obsoleto.",
+    badages: [TAGS.LARAVEL],
   },
 ];
 ---
 
 <ol class="relative border-s border-gray-200 dark:border-gray-700">
-  {EXPERIENCIA.map((item) => <ExperienciaItem {...item} />)}
+   {EXPERIENCIA.map((item) => 
+  (
+<li class="mb-20 ms-4">
+  <!-- dot -->
+  <div
+    class="absolute w-3 h-3 bg-green-300 rounded-full mt-1.5 -start-1.5 border border-green-300"
+  >
+  </div>
+  <div class="grid md:grid-cols-2 gap-4">
+    <div>
+      <h3 class="font-bold capitalize text-green-300 text-xl">
+        {item.title}
+      </h3>
+
+      <h4 class="font-semibold">{item.place}</h4>
+      <time
+        class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+        >{item.date}</time
+      >
+     <div class="flex py-2">
+      {item.badages.map((badage) => (
+        <span
+          class={`flex items-center justify-start gap-1 px-2 py-1 text-xs font-medium text-white ${badage.class} rounded-full`}
+        >
+          <badage.icon class="w-4 h-4" />
+            {badage.name}
+        </span>
+      ))}
+
+      </div> 
+    </div>
+    <p class="font-normal text-pretty text-gray-500 dark:text-gray-400">
+      {item.description}
+    </p>
+  </div>
+</li>
+  ))}
 </ol>

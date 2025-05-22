@@ -3,22 +3,26 @@ import { Image } from "astro:assets";
 import boliUAMImage from "../assets/boliUAM.png";
 import waifu from "../assets/waifu.png";
 import experimento from "../assets/experimento.png";
+import SIIPI from "../assets/siipi-next.png";
 import React from "./icons/React.astro";
 import Node from "./icons/Node.astro";
 import Button from "./Button.astro";
 import Github from "./icons/Github.astro";
 import Link from "./icons/Link.astro";
+import Nextjs from "./icons/Nextjs.astro";
 
 const TAGS = {
   REACT: {
     name: "React",
-    class: "bg-blue-700",
     icon: React,
   },
   NODE: {
     name: "Node",
-    class: "bg-green-900",
     icon: Node,
+  },
+  NEXTJS: {
+    name: "Next.js",
+    icon: Nextjs,
   },
 };
 
@@ -49,6 +53,15 @@ const projects = [
     preview: "https://boliuam.vercel.app/",
     badages: [TAGS.REACT],
   },
+  {
+    name: "SIIPI-NEXT",
+    description:
+      "SIIPI-NEXT es una reimaginación del sistema SIIPI, una plataforma de visualización de datos de la UAM-I",
+    image: SIIPI,
+    code: "https://github.com/AxelHuerta/siipi-next",
+    preview: "https://siipi-next.vercel.app/login",
+    badages: [TAGS.NEXTJS],
+  },
 ];
 ---
 
@@ -64,11 +77,11 @@ const projects = [
           />
         </div>
         <div class="space-y-4">
-          <h3 class="text-xl font-bold text-[#6180fe]">{project.name}</h3>
+          <h3 class="text-xl font-bold text-green-300">{project.name}</h3>
           <div class="flex gap-2">
             {project.badages.map((badage) => (
               <span
-                class={`flex items-center gap-1 px-2 py-1 text-xs font-medium text-white ${badage.class}  rounded-full`}
+                class={`flex items-center gap-1 px-2 py-1 text-xs font-medium text-white border-[1px] border-gray-700 rounded-full`}
               >
                 <badage.icon class="w-4 h-4" />
                 {badage.name}
