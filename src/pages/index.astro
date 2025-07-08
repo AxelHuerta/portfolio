@@ -8,44 +8,50 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <section id="home" class="max-w-md space-y-4 my-48">
-    <h1 class="text-5xl font-bold">¡Hola! Soy <br /> Axel Huerta</h1>
-    <p>
-      Estudiante de Licenciatura en Computación en la <span
-        class="font-semibold text-green-200"
-        >Universidad Autónoma Metropolitana</span
-      >, apasionado por la programación y el desarrollo web.
-    </p>
+  <main class="max-w-7xl mx-auto px-4 py-32">
+    <section id="presentation" class="max-w-md space-y-4 mt-20">
+      <div>
+        <h1 class="text-5xl font-bold">
+          ¡Hola! Soy <br /> Axel Huerta
+        </h1>
+        <p>
+          Estudiante de Licenciatura en Computación en la <span
+            class="font-semibold text-green-200"
+            >Universidad Autónoma Metropolitana</span
+          >, apasionado por la programación y el desarrollo web.
+        </p>
+      </div>
 
-    <!-- links -->
-    <div class="flex gap-2">
-      <a href="https://github.com/AxelHuerta" target="_blank">
-        <Button>
-          <span class="flex items-center gap-1">
-            <Github class="w-4 h-4" /> Github
-          </span>
-        </Button>
-      </a>
-      <a href="https://www.linkedin.com/in/axelhuerta/" target="_blank">
-        <Button>
-          <span class="flex items-center gap-1">
-            <LinkedIn class="w-4 h-4" />
-            LinkedIn
-          </span>
-        </Button>
-      </a>
-    </div>
-  </section>
+      <!-- links -->
+      <div class="flex gap-2">
+        <a href="https://github.com/AxelHuerta" target="_blank">
+          <Button>
+            <span class="flex items-center gap-1">
+              <Github class="w-4 h-4" /> Github
+            </span>
+          </Button>
+        </a>
+        <a href="https://www.linkedin.com/in/axelhuerta/" target="_blank">
+          <Button>
+            <span class="flex items-center gap-1">
+              <LinkedIn class="w-4 h-4" />
+              LinkedIn
+            </span>
+          </Button>
+        </a>
+      </div>
+    </section>
 
-  <!-- Experiencia -->
-  <section id="experience" class="my-48">
-    <h2 class="text-3xl font-bold my-12">Experiencia</h2>
-    <Experiencia />
-  </section>
+    <!-- Experiencia -->
+    <section id="experience" class="my-48">
+      <h2 class="text-3xl font-bold my-12">Experiencia</h2>
+      <Experiencia />
+    </section>
 
-  <!-- Proyectos -->
-  <section id="proyects" class="mt-24">
-    <h2 class="text-3xl font-bold my-4">Proyectos</h2>
-    <Project />
-  </section>
+    <!-- Proyectos -->
+    <section id="proyects" class="mt-24">
+      <h2 class="text-3xl font-bold my-4">Proyectos</h2>
+      <Project />
+    </section>
+  </main>
 </Layout>

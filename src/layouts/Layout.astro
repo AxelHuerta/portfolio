@@ -12,13 +12,27 @@ import "@fontsource-variable/montserrat";
     <meta name="generator" content={Astro.generator} />
     <title>Portfolio | Axel Huerta</title>
   </head>
-  <body class="text-white overflow-x-hidden">
-    <div
-      class="absolute top-0 z-[-2] min-h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-    >
-      <main class="max-w-4xl mx-auto my-12 p-4 text-md">
+  <body class="text-white">
+    <div class="min-h-screen w-full bg-black relative">
+      {/* Dark Noise Colored Background */}
+      <div
+        class="absolute inset-0 z-0"
+        style={{
+          background: "#000000",
+          backgroundImage: `
+        radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.2) 1px, transparent 0),
+        radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.18) 1px, transparent 0),
+        radial-gradient(circle at 1px 1px, rgba(236, 72, 153, 0.15) 1px, transparent 0)
+      `,
+          backgroundSize: "20px 20px, 30px 30px, 25px 25px",
+          backgroundPosition: "0 0, 10px 10px, 15px 5px",
+        }}
+      >
+      </div>
+      {/* Your Content/Components */}
+      <div class="relative z-10 max-w-5xl mx-auto px-4 py-8">
         <slot />
-      </main>
+      </div>
     </div>
   </body>
 </html>
