@@ -10,6 +10,7 @@ import Button from "./Button.astro";
 import Github from "./icons/Github.astro";
 import Link from "./icons/Link.astro";
 import Nextjs from "./icons/Nextjs.astro";
+import Typescript from "./icons/Typescript.astro";
 
 const TAGS = {
   REACT: {
@@ -24,6 +25,10 @@ const TAGS = {
     name: "Next.js",
     icon: Nextjs,
   },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    icon: Typescript,
+  },
 };
 
 const projects = [
@@ -33,8 +38,8 @@ const projects = [
       "Aplicación web para que los alumnos de mi carrera lleven un registro de su progreso académico, facilitando la visualización de las materias aprobadas y pendientes.",
     image: boliUAMImage,
     code: "https://github.com/AxelHuerta/boliUAM",
-    preview: "https://github.com/AxelHuerta/boliUAM",
-    badages: [TAGS.REACT],
+    preview: "https://boliuam.vercel.app/",
+    badages: [TAGS.REACT, TAGS.TYPESCRIPT],
   },
   {
     name: "Plataforma de Experimentación Psicológica – Colaboración con Carrera de Psicología Social",
@@ -42,16 +47,16 @@ const projects = [
       "Aplicación web para un experimento psicológico en el que los participantes respondían preguntas y podían ver las respuestas de otros usuarios en tiempo real.",
     image: experimento,
     code: "https://github.com/AxelHuerta/metodologia-admin",
-    badages: [TAGS.REACT, TAGS.NODE],
+    badages: [TAGS.REACT, TAGS.NODE, TAGS.TYPESCRIPT],
   },
   {
     name: "Waifu Randomaizer",
     description:
       "Aplicación web interactiva que consume la Waifu API para mostrar imágenes aleatorias de waifus anime.",
     image: waifu,
-    code: "https://github.com/AxelHuerta/boliUAM",
-    preview: "https://boliuam.vercel.app/",
-    badages: [TAGS.REACT],
+    code: "https://github.com/AxelHuerta/WaifuRandomizer",
+    preview: "https://waifu-randomizer.vercel.app/",
+    badages: [TAGS.REACT, TAGS.TYPESCRIPT],
   },
   {
     name: "SIIPI-NEXT",
@@ -60,7 +65,7 @@ const projects = [
     image: SIIPI,
     code: "https://github.com/AxelHuerta/siipi-next",
     preview: "https://siipi-next.vercel.app/login",
-    badages: [TAGS.NEXTJS],
+    badages: [TAGS.NEXTJS, TAGS.REACT, TAGS.TYPESCRIPT],
   },
 ];
 ---

@@ -1,6 +1,8 @@
 ---
 import Nextjs from "./icons/Nextjs.astro";
 import Laravel from "./icons/Laravel.astro";
+import React from "./icons/React.astro";
+import Typescript from "./icons/Typescript.astro";
 
 const TAGS = {
   NEXTJS: {
@@ -13,6 +15,16 @@ const TAGS = {
     class: "bg-black border-[1px] border-gray-700",
     icon: Laravel,
   },
+  REACT: {
+    name: "React",
+    class: "bg-black border-[1px] border-gray-700",
+    icon: React,
+  },
+  TYPESCRIPT: {
+    name: "Typescript",
+    class: "bg-black border-[1px] border-gray-700",
+    icon: Typescript,
+  }
 };
 
 
@@ -24,7 +36,7 @@ const EXPERIENCIA = [
     place: "UAM-I",
     description:
       "Colaboré en el desarrollo de una aplicación web para la gestión integral de insumos, pacientes y expedientes médicos.",
-    badages: [TAGS.NEXTJS],
+    badages: [TAGS.NEXTJS, TAGS.REACT, TAGS.TYPESCRIPT],
   },
   {
     date: "Febrero 2024 - Agosto 2024",
@@ -57,7 +69,7 @@ const EXPERIENCIA = [
         class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
         >{item.date}</time
       >
-     <div class="flex py-2">
+     <div class="flex py-2 space-x-1">
       {item.badages.map((badage) => (
         <span
           class={`flex items-center justify-start gap-1 px-2 py-1 text-xs font-medium text-white ${badage.class} rounded-full`}
