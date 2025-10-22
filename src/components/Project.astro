@@ -11,25 +11,9 @@ import Github from "./icons/Github.astro";
 import Link from "./icons/Link.astro";
 import Nextjs from "./icons/Nextjs.astro";
 import Typescript from "./icons/Typescript.astro";
-
-const TAGS = {
-  REACT: {
-    name: "React",
-    icon: React,
-  },
-  NODE: {
-    name: "Node",
-    icon: Node,
-  },
-  NEXTJS: {
-    name: "Next.js",
-    icon: Nextjs,
-  },
-  TYPESCRIPT: {
-    name: "TypeScript",
-    icon: Typescript,
-  },
-};
+import { TAGS } from "../lib/tags";
+import ImageZoom from "./ui/ImageZoom.astro";
+import Badges from "./ui/Badges.astro";
 
 const projects = [
   {
@@ -47,7 +31,7 @@ const projects = [
       "Aplicación web para un experimento psicológico en el que los participantes respondían preguntas y podían ver las respuestas de otros usuarios en tiempo real.",
     image: experimento,
     code: "https://github.com/AxelHuerta/metodologia-admin",
-    badages: [TAGS.REACT, TAGS.NODE, TAGS.TYPESCRIPT],
+    badages: [TAGS.REACT, TAGS.NODE, TAGS.TYPESCRIPT, TAGS.MONGODB],
   },
   {
     name: "Waifu Randomaizer",
@@ -74,25 +58,10 @@ const projects = [
   {
     projects.map((project) => (
       <div class="flex flex-col md:flex-row gap-6">
-        <div class="relative overflow-clip rounded-2xl">
-          <Image
-            src={project.image}
-            alt={project.name}
-            class="md:max-w-xs rounded-2xl border-[1px] border-neutral-800 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-120"
-          />
-        </div>
+        <ImageZoom url={project.image} alt={project.name} />
         <div class="space-y-4">
-          <h3 class="text-xl font-bold text-green-300">{project.name}</h3>
-          <div class="flex gap-2">
-            {project.badages.map((badage) => (
-              <span
-                class={`flex items-center gap-1 px-2 py-1 text-xs font-medium text-white border-[1px] border-gray-700 rounded-full`}
-              >
-                <badage.icon class="w-4 h-4" />
-                {badage.name}
-              </span>
-            ))}
-          </div>
+          <h3 class="text-xl font-bold text-emerald-500">{project.name}</h3>
+          <Badges badges={project.badages} />
           <p class="text-pretty">{project.description}</p>
           <div class="flex gap-3">
             {project.code && (

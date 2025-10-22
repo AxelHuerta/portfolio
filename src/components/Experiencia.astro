@@ -3,35 +3,13 @@ import Nextjs from "./icons/Nextjs.astro";
 import Laravel from "./icons/Laravel.astro";
 import React from "./icons/React.astro";
 import Typescript from "./icons/Typescript.astro";
-
-const TAGS = {
-  NEXTJS: {
-    name: "Next.js",
-    class: "bg-black border-[1px] border-gray-700",
-    icon: Nextjs,
-  },
-  LARAVEL: {
-    name: "Laravel",
-    class: "bg-black border-[1px] border-gray-700",
-    icon: Laravel,
-  },
-  REACT: {
-    name: "React",
-    class: "bg-black border-[1px] border-gray-700",
-    icon: React,
-  },
-  TYPESCRIPT: {
-    name: "Typescript",
-    class: "bg-black border-[1px] border-gray-700",
-    icon: Typescript,
-  }
-};
-
+import { TAGS } from "../lib/tags";
+import Badges from "./ui/Badges.astro";
 
 const EXPERIENCIA = [
   {
     date: "Enero 2024 - Presente",
-    title: "Desarrollador front end",
+    title: "Desarrollador frontend",
 
     place: "UAM-I",
     description:
@@ -40,7 +18,7 @@ const EXPERIENCIA = [
   },
   {
     date: "Febrero 2024 - Agosto 2024",
-    title: "Desarrollador back end",
+    title: "Desarrollador backend",
     place: "UAM-I",
     description:
       "Colaboré en el desarrollo de un sistema de gestión de préstamos de dispositivos, para reemplazar un software obsoleto.",
@@ -55,33 +33,26 @@ const EXPERIENCIA = [
 <li class="mb-20 ms-4">
   <!-- dot -->
   <div
-    class="absolute w-3 h-3 bg-green-300 rounded-full mt-1.5 -start-1.5 border border-green-300"
+    class="absolute w-3 h-3 bg-emerald-500 rounded-full mt-1.5 -start-1.5 border border-green-300"
   >
   </div>
   <div class="grid md:grid-cols-2 gap-4">
     <div>
-      <h3 class="font-bold capitalize text-green-300 text-xl">
+      <h3 class="font-bold capitalize text-emerald-500 text-xl">
         {item.title}
       </h3>
 
       <h4 class="font-semibold">{item.place}</h4>
       <time
-        class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+        class="text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
         >{item.date}</time
       >
-     <div class="flex py-2 space-x-1">
-      {item.badages.map((badage) => (
-        <span
-          class={`flex items-center justify-start gap-1 px-2 py-1 text-xs font-medium text-white ${badage.class} rounded-full`}
-        >
-          <badage.icon class="w-4 h-4" />
-            {badage.name}
-        </span>
-      ))}
-
-      </div> 
+      
+      <div class="mt-3">
+        <Badges badges={item.badages} /> 
+      </div>
     </div>
-    <p class="font-normal text-pretty text-gray-500 dark:text-gray-400">
+    <p class="font-normal text-pretty text-gray-500 dark:text-gray-400 mt-8">
       {item.description}
     </p>
   </div>

@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import tsCodigoFacilito from "../assets/certificates/ts-codigo-facilito.png";
+import tsUdemy from "../assets/certificates/ts-udemy.png";
+import jsHtmlCssNode from "../assets/certificates/js-html-css-node.png";
+import programaOne from "../assets/certificates/programa-one.png";
+import { TAGS } from "../lib/tags";
+import ImageZoom from "./ui/ImageZoom.astro";
+import Badges from "./ui/Badges.astro";
+
+const certificates = [
+  {
+    title: "Curso: Aprende Javascript ES9, HTML, CSS3 y NodeJS desde cero",
+    platform: "Udemy",
+    image: jsHtmlCssNode,
+    badges: [TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS3, TAGS.NODE],
+  },
+  {
+    title: "Curso: Oracle Next Education F2 T5 Back-end ",
+    platform: "Alura Latam",
+    image: programaOne,
+    badges: [TAGS.JAVA, TAGS.SPRINGBOOT],
+  },
+  {
+    title: "Curso Profesional de Typescript",
+    platform: "Código Facilito",
+    image: tsCodigoFacilito,
+    badges: [TAGS.TYPESCRIPT],
+  },
+  {
+    title: "Curso: Typescript Sin Fronteras",
+    platform: "Código Facilito",
+    image: tsUdemy,
+    badges: [TAGS.TYPESCRIPT],
+  },
+];
+---
+
+<div class="space-y-8 mt-8">
+  {
+    certificates.map(({ title, platform, image, badges }) => (
+      <div class="flex flex-col md:flex-row gap-8">
+        <ImageZoom url={image} alt={`Certificado de ${title} de ${platform}`} />
+        <div class="space-y-3 mt-2">
+          <h3 class="text-xl font-bold text-emerald-500">{title}</h3>
+          <div class="flex gap-2">
+            <Badges badges={badges} />
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
