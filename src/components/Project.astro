@@ -1,21 +1,30 @@
 ---
-import { Image } from "astro:assets";
 import boliUAMImage from "../assets/boliUAM.png";
-import waifu from "../assets/waifu.png";
 import experimento from "../assets/experimento.png";
 import SIIPI from "../assets/siipi-next.png";
-import React from "./icons/React.astro";
-import Node from "./icons/Node.astro";
+import siiuam from "../assets/siiuam-next.png";
+import portoflio from "../assets/portfolio.png";
 import Button from "./Button.astro";
 import Github from "./icons/Github.astro";
 import Link from "./icons/Link.astro";
-import Nextjs from "./icons/Nextjs.astro";
-import Typescript from "./icons/Typescript.astro";
 import { TAGS } from "../lib/tags";
 import ImageZoom from "./ui/ImageZoom.astro";
 import Badges from "./ui/Badges.astro";
 
 const projects = [
+  {
+    name: "Portafolio",
+    description: "Este mismo portafolio.",
+    image: portoflio,
+    code: "https://github.com/AxelHuerta/portfolio",
+    badages: [
+      TAGS.ASTRO,
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.TAILWINDCSS,
+      TAGS.TYPESCRIPT,
+    ],
+  },
   {
     name: "boliUAM",
     description:
@@ -34,14 +43,22 @@ const projects = [
     badages: [TAGS.REACT, TAGS.NODE, TAGS.TYPESCRIPT, TAGS.MONGODB],
   },
   {
-    name: "Waifu Randomaizer",
+    name: "SIIUAM-Next",
     description:
-      "Aplicación web interactiva que consume la Waifu API para mostrar imágenes aleatorias de waifus anime.",
-    image: waifu,
-    code: "https://github.com/AxelHuerta/WaifuRandomizer",
-    preview: "https://waifu-randomizer.vercel.app/",
-    badages: [TAGS.REACT, TAGS.TYPESCRIPT],
+      "SIIUAM-Next es una reimaginación del sitema SIIUAM de la UAM-Iztapalapa. Utilizando el servidor de la plataforma, permite conectarse a través de una interfaz más amigable.",
+    image: siiuam,
+    code: "https://github.com/AxelHuerta/siiuam-next",
+    badages: [TAGS.NEXTJS, TAGS.REACT, TAGS.TYPESCRIPT],
   },
+  // {
+  //   name: "Waifu Randomaizer",
+  //   description:
+  //     "Aplicación web interactiva que consume la Waifu API para mostrar imágenes aleatorias de waifus anime.",
+  //   image: waifu,
+  //   code: "https://github.com/AxelHuerta/WaifuRandomizer",
+  //   preview: "https://waifu-randomizer.vercel.app/",
+  //   badages: [TAGS.REACT, TAGS.TYPESCRIPT],
+  // },
   {
     name: "SIIPI-NEXT",
     description:
