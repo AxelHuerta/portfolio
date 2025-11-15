@@ -1,7 +1,10 @@
+---
+import Mail from './icons/Mail.astro';
+---
 <nav
-  class="fixed z-10 bg-neutral-900/30 backdrop-blur-md shadow-md border-[1px] border-neutral-500/30 px-8 py-4 rounded-full left-1/2 bottom-4 sm:bottom-auto sm:top-4 transform -translate-x-1/2"
+  class="fixed z-10 bg-neutral-900/30 backdrop-blur-md shadow-md border border-neutral-500/30 p-2 rounded-full left-1/2 bottom-4 sm:bottom-auto sm:top-4 transform -translate-x-1/2"
 >
-  <ul class="flex gap-4">
+  <ul class="flex items-center gap-4 pl-4">
     <li>
       <a
         href="#presentation"
@@ -92,5 +95,13 @@
         <span class="hidden sm:flex">Certificados</span></a
       >
     </li>
+    
+<li class="rounded-full">
+  <button class="bg-neutral-50 text-black py-2 px-4 rounded-full font-medium text-sm gradient-border cursor-pointer">
+    <a href="mailto:axelhuerta.dev@gmail.com" class="flex items-center">
+      <Mail class="h-5" />
+      Contáctame</a>
+  </button>
+</li>
   </ul>
 </nav>
