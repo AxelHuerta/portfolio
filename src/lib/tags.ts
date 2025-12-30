@@ -17,6 +17,8 @@ import Git from "../components/icons/Git.astro";
 import AstroLogo from "../components/icons/AstroLogo.astro";
 import Docker from "../components/icons/Docker.astro";
 import Tailwind from "../components/icons/Tailwind.astro";
+import Figma from "../components/icons/Figma.astro";
+import Linux from "../components/icons/Linux.astro";
 
 export const TAGS = {
   NEXTJS: {
@@ -94,5 +96,13 @@ export const TAGS = {
   TAILWINDCSS: {
     name: "TailwindCSS",
     icon: Tailwind,
+  },
+  FIGMA: {
+    name: "Figma",
+    icon: Figma,
+  },
+  LINUX: {
+    name: "Linux",
+    icon: Linux,
   },
 };
