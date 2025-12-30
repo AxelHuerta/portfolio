@@ -19,6 +19,7 @@ import Docker from "../components/icons/Docker.astro";
 import Tailwind from "../components/icons/Tailwind.astro";
 import Figma from "../components/icons/Figma.astro";
 import Linux from "../components/icons/Linux.astro";
+import Go from "../components/icons/Go.astro";
 
 export const TAGS = {
   NEXTJS: {
@@ -104,5 +105,9 @@ export const TAGS = {
   LINUX: {
     name: "Linux",
     icon: Linux,
+  },
+  GO: {
+    name: "Go",
+    icon: Go,
   },
 };

@@ -1,68 +1,68 @@
 ---
-import { Image } from "astro:assets";
+import go from "../assets/certificates/go.png";
 import tsCodigoFacilito from "../assets/certificates/ts-codigo-facilito.png";
 import tsUdemy from "../assets/certificates/ts-udemy.png";
 import jsHtmlCssNode from "../assets/certificates/js-html-css-node.png";
 import programaOne from "../assets/certificates/programa-one.png";
 import { TAGS } from "../lib/tags";
-import ImageZoom from "./ui/ImageZoom.astro";
 import Badges from "./ui/Badges.astro";
 import Button from "./Button.astro";
 import Pdf from "./icons/Pdf.astro";
 
 const certificates = [
   {
+    title: "Curso profesional de Go",
+    platform: "Código Facilito",
+    image: go,
+    badges: [TAGS.GO],
+  },
+  {
     title: "Curso: Aprende Javascript ES9, HTML, CSS3 y NodeJS desde cero",
     platform: "Udemy",
     image: jsHtmlCssNode,
     badges: [TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS3, TAGS.NODE],
-    link: "https://github.com/AxelHuerta/portfolio/blob/main/src/assets/certificates/pdf/js-html-css-node.pdf",
   },
   {
     title: "Curso: Oracle Next Education F2 T5 Back-end",
     platform: "Alura Latam",
     image: programaOne,
     badges: [TAGS.JAVA, TAGS.SPRINGBOOT],
-    link: "https://github.com/AxelHuerta/portfolio/blob/main/src/assets/certificates/pdf/programa-one.pdf",
   },
   {
     title: "Curso Profesional de Typescript",
     platform: "Código Facilito",
     image: tsCodigoFacilito,
     badges: [TAGS.TYPESCRIPT],
-    link: "https://github.com/AxelHuerta/portfolio/blob/main/src/assets/certificates/pdf/Certificado%20-%20Curso%20Profesional%20de%20Typescript.pdf",
   },
   {
     title: "Curso: Typescript Sin Fronteras",
     platform: "Udemy",
     image: tsUdemy,
     badges: [TAGS.TYPESCRIPT],
-    link: "https://github.com/AxelHuerta/portfolio/blob/main/src/assets/certificates/pdf/typescript.pdf",
   },
 ];
 ---
 
-<div class="space-y-8 mt-8">
+<div
+  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 auto-rows-fr"
+>
   {
-    certificates.map(({ title, platform, image, badges, link }) => (
-      <div class="flex flex-col md:flex-row gap-8">
-        <ImageZoom url={image} alt={`Certificado de ${title} de ${platform}`} />
-        <div class="space-y-3 mt-2">
+    certificates.map(({ title, platform, image, badges }) => (
+      <article class="flex flex-col gap-6 p-4 bg-neutral-800/50 rounded-xl shadow-sm h-full">
+        <img
+          src={image?.src ?? image}
+          alt={`Certificado de ${title} de ${platform}`}
+          class="w-full h-48 md:h-56 object-contain rounded-xl"
+          loading="lazy"
+        />
+
+        <div class="space-y-3">
           <h3 class="text-xl font-bold text-emerald-500">{title}</h3>
           <div class="flex gap-2">
             <Badges badges={badges} />
           </div>
-
-          <a href={link} target="_blank">
-            <Button class="w-full">
-              <span class="flex items-center gap-2">
-                <Pdf />
-                Ver certificado en PDF
-              </span>
-            </Button>
-          </a>
         </div>
-      </div>
+      </article>
     ))
   }
 </div>
