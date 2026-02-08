@@ -1,6 +1,7 @@
 ---
-import Mail from './icons/Mail.astro';
+import Mail from "./icons/Mail.astro";
 ---
+
 <nav
   class="fixed z-10 bg-neutral-900/30 backdrop-blur-md shadow-md border border-neutral-500/30 p-2 rounded-full left-1/2 bottom-4 sm:bottom-auto sm:top-4 transform -translate-x-1/2"
 >
@@ -72,7 +73,7 @@ import Mail from './icons/Mail.astro';
         <span class="hidden sm:flex">Proyectos</span></a
       >
     </li>
-    <li>
+    <!-- <li>
       <a href="#certificates" class="flex items-center space-x-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -94,14 +95,17 @@ import Mail from './icons/Mail.astro';
         >
         <span class="hidden sm:flex">Certificados</span></a
       >
+    </li> -->
+
+    <li class="rounded-full">
+      <button
+        class="bg-neutral-50 text-black py-2 px-4 rounded-full font-medium text-sm gradient-border cursor-pointer"
+      >
+        <a href="mailto:axelhuerta.dev@gmail.com" class="flex items-center">
+          <Mail class="h-5" />
+          Contáctame</a
+        >
+      </button>
     </li>
-    
-<li class="rounded-full">
-  <button class="bg-neutral-50 text-black py-2 px-4 rounded-full font-medium text-sm gradient-border cursor-pointer">
-    <a href="mailto:axelhuerta.dev@gmail.com" class="flex items-center">
-      <Mail class="h-5" />
-      Contáctame</a>
-  </button>
-</li>
   </ul>
 </nav>
