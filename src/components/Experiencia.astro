@@ -5,11 +5,11 @@ import Badges from "./ui/Badges.astro";
 const EXPERIENCIA = [
   {
     date: "Enero 2026 - Presente",
-    title: "Desarrollador",
+    title: "Desarrollador Fullstack",
     place: "Naviomar",
     description:
       "",
-    badages: [ TAGS.REACT, TAGS.TYPESCRIPT, TAGS.LARAVEL],
+      badages: [ TAGS.REACT, TAGS.NUXT, TAGS.TYPESCRIPT, TAGS.LARAVEL],
   },
   {
     date: "Enero 2024 - Enero 2026",
@@ -31,17 +31,17 @@ const EXPERIENCIA = [
 ---
 
 <ol class="relative border-s border-gray-200 dark:border-gray-700">
-   {EXPERIENCIA.map((item) => 
+   {EXPERIENCIA.map((item) =>
   (
 <li class="mb-20 ms-4">
   <!-- dot -->
   <div
-    class="absolute w-3 h-3 bg-emerald-500 rounded-full mt-1.5 -start-1.5 border border-green-300"
+    class="absolute w-3 h-3 bg-ctp-green-300 rounded-full mt-1.5 -start-1.5 border border-ctp-green-300"
   >
   </div>
   <div class="grid md:grid-cols-2 gap-4">
     <div>
-      <h3 class="font-bold capitalize text-emerald-500 text-xl">
+      <h3 class="font-bold capitalize text-ctp-green-400 text-xl">
         {item.title}
       </h3>
 
@@ -50,12 +50,12 @@ const EXPERIENCIA = [
         class="text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
         >{item.date}</time
       >
-      
+
       <div class="mt-3">
-        <Badges badges={item.badages} /> 
+        <Badges badges={item.badages} />
       </div>
     </div>
-    <p class="font-normal text-pretty text-gray-500 dark:text-gray-400 mt-8">
+    <p class="font-normal text-pretty text-gray-400 dark:text-gray-400 mt-8">
       {item.description}
     </p>
   </div>

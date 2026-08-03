@@ -8,32 +8,34 @@ import AboutMe from "../components/AboutMe.astro";
 ---
 
 <Layout>
-  <Navbar />
+    <Navbar />
+    <main class="max-w-7xl mx-auto px-15 pb-32">
+        <section
+            id="presentation"
+            class="max-w-md space-y-4 min-h-[85vh] flex flex-col justify-center"
+        >
+            <AboutMe />
+        </section>
 
-  <main class="max-w-7xl mx-auto px-4 pb-32">
-    <section
-      id="presentation"
-      class="max-w-md space-y-4 min-h-[85vh] flex flex-col justify-center"
-    >
-      <AboutMe />
-    </section>
+        <!-- Experiencia -->
+        <section
+            id="experience"
+            class="min-h-[80vh] flex flex-col justify-center"
+        >
+            <h2 class="text-3xl font-bold my-12">Experiencia</h2>
+            <Experiencia />
+        </section>
 
-    <!-- Experiencia -->
-    <section id="experience" class="min-h-[80vh] flex flex-col justify-center">
-      <h2 class="text-3xl font-bold my-12">Experiencia</h2>
-      <Experiencia />
-    </section>
+        <!-- Proyectos -->
+        <section id="projects" class="pt-12">
+            <h2 class="text-3xl font-bold my-4">Proyectos</h2>
+            <Project />
+        </section>
 
-    <!-- Proyectos -->
-    <section id="projects" class="pt-12">
-      <h2 class="text-3xl font-bold my-4">Proyectos</h2>
-      <Project />
-    </section>
-
-    <!-- Certificados -->
-    <!-- <section id="certificates" class="pt-24">
+        <!-- Certificados -->
+        <!-- <section id="certificates" class="pt-24">
       <h2 class="text-3xl font-bold my-4">Certificados</h2>
       <Certificados />
     </section> -->
-  </main>
+    </main>
 </Layout>

@@ -10,6 +10,7 @@ import SpringBoot from "../components/icons/SpringBoot.astro";
 import Typescript from "../components/icons/Typescript.astro";
 import CSS from "../components/icons/CSS.astro";
 import Express from "../components/icons/Express.astro";
+import Nuxt from "../components/icons/Nuxt.astro"
 import MySQL from "../components/icons/MySQL.astro";
 import PostgreSQL from "../components/icons/PostgreSQL.astro";
 import Mongo from "../components/icons/Mongo.astro";
@@ -109,5 +110,9 @@ export const TAGS = {
   GO: {
     name: "Go",
     icon: Go,
+  },
+  NUXT: {
+    name: "Nuxt",
+    icon: Nuxt,
   },
 };

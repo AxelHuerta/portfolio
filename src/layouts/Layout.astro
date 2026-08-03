@@ -5,41 +5,24 @@ import "@fontsource-variable/montserrat";
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Portfolio | Axel Huerta</title>
-  </head>
-  <body class="text-white scroll-smooth">
-    <div class="min-h-screen w-full bg-black relative">
-      {/* Dark Noise Colored Background */}
-      <div
-        class="absolute inset-0 z-0"
-        style={{
-          background: "#000",
-          backgroundImage: `
-        radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.2) 1px, transparent 0),
-        radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.18) 1px, transparent 0),
-        radial-gradient(circle at 1px 1px, rgba(236, 72, 153, 0.15) 1px, transparent 0)
-      `,
-          backgroundSize: "20px 20px, 30px 30px, 25px 25px",
-          backgroundPosition: "0 0, 10px 10px, 15px 5px",
-        }}
-      >
-      </div>
-  
-
-      <div class="relative z-10 max-w-5xl mx-auto px-4">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Portfolio | Axel Huerta</title>
+    </head>
+    <body class="bg-ctp-base text-ctp-text scroll-smooth">
+        <div
+            class="pointer-events-none fixed inset-0 -z-10 bg-ctp-base bg-[radial-gradient(#585b7040_1px,#1e1e2e_1px)] bg-[size:20px_20px]"
+            aria-hidden="true"
+        ></div>
         <slot />
-      </div>
-    </div>
-  </body>
+    </body>
 </html>
 
 <style>
-  body {
-    font-family: "Montserrat Variable", sans-serif;
-  }
+    body {
+        font-family: "Montserrat Variable", sans-serif;
+    }
 </style>

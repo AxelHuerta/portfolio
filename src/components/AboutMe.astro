@@ -4,65 +4,64 @@ import Github from "./icons/Github.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
 import { TAGS } from "../lib/tags";
 import Badges from "./ui/Badges.astro";
-import Mail from "./icons/Mail.astro";
 
 const skills = [
-  TAGS.HTML,
-  TAGS.CSS,
-  TAGS.TAILWINDCSS,
-  TAGS.JAVASCRIPT,
-  TAGS.TYPESCRIPT,
-  TAGS.REACT,
-  TAGS.NEXTJS,
+    TAGS.HTML,
+    TAGS.CSS,
+    TAGS.TAILWINDCSS,
+    TAGS.JAVASCRIPT,
+    TAGS.TYPESCRIPT,
+    TAGS.REACT,
+    TAGS.NEXTJS,
 
-  TAGS.ASTRO,
-  TAGS.NODE,
-  TAGS.EXPRESS,
-  TAGS.JAVA,
-  TAGS.SPRINGBOOT,
-  TAGS.MYSQL,
-  TAGS.POSTGRESQL,
-  TAGS.MONGODB,
-  TAGS.GIT,
-  TAGS.DOCKER,
+    TAGS.ASTRO,
+    TAGS.NODE,
+    TAGS.EXPRESS,
+    TAGS.JAVA,
+    TAGS.SPRINGBOOT,
+    TAGS.MYSQL,
+    TAGS.POSTGRESQL,
+    TAGS.MONGODB,
+    TAGS.GIT,
+    TAGS.DOCKER,
 
-  TAGS.FIGMA,
-  TAGS.LINUX
+    TAGS.FIGMA,
+    TAGS.LINUX,
 ];
 ---
 
 <div>
-  <h1 class="text-5xl font-bold">
-    ¡Hola! Soy <br /> Axel Huerta
-  </h1>
-  <p>
-    Egresado de la Licenciatura en Computación en la <span
-      class="font-semibold text-lime-600"
-      >Universidad Autónoma Metropolitana</span
-    >, apasionado por la programación y el desarrollo web.
-  </p>
+    <h1 class="text-5xl font-bold">
+        ¡Hola! Soy <br /> Axel Huerta
+    </h1>
+    <p class="text-neutral-200">
+        Egresado de la Licenciatura en Computación en la <span
+            class="font-semibold text-main-green"
+            >Universidad Autónoma Metropolitana</span
+        >, apasionado por la programación y el desarrollo web.
+    </p>
 </div>
 
 <!-- links -->
 <div class="flex gap-2">
-  <a href="https://github.com/AxelHuerta" target="_blank">
-    <Button>
-      <span class="flex items-center gap-1">
-        <Github class="w-4 h-4" /> Github
-      </span>
-    </Button>
-  </a>
-  <a href="https://www.linkedin.com/in/axelhuerta/" target="_blank">
-    <Button>
-      <span class="flex items-center gap-1">
-        <LinkedIn class="w-4 h-4" />
-        LinkedIn
-      </span>
-    </Button>
-  </a>
+    <a href="https://github.com/AxelHuerta" target="_blank">
+        <Button>
+            <span class="flex items-center gap-1">
+                <Github class="w-4 h-4" /> Github
+            </span>
+        </Button>
+    </a>
+    <a href="https://www.linkedin.com/in/axelhuerta/" target="_blank">
+        <Button>
+            <span class="flex items-center gap-1">
+                <LinkedIn class="w-4 h-4" />
+                LinkedIn
+            </span>
+        </Button>
+    </a>
 </div>
 
 <div class="mt-8">
-  <h4 class="text-lg text-emerald-500 font-semibold">Habilidades</h4>
-  <Badges badges={skills} />
+    <h4 class="text-lg text-ctp-green-400 font-semibold">Habilidades</h4>
+    <Badges badges={skills} />
 </div>

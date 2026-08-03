@@ -1,7 +1,15 @@
 ---
-
+interface Props {
+    isMain?: boolean;
+}
+const { isMain = false } = Astro.props;
 ---
 
-<button class="border border-neutral-500 p-2 rounded-xl text-sm cursor-pointer hover:border-emerald-500 duration-300">
-  <slot />
+<button
+    class:list={[
+        "border border-violet-200 p-2 rounded-xl text-sm cursor-pointer hover:border-emerald-500 duration-300",
+        { "bg-ctp-green-400 text-black": isMain },
+    ]}
+>
+    <slot />
 </button>
