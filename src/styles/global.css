@@ -3,10 +3,65 @@
 
 body {
   font-family: "Montserrat Variable", sans-serif;
+  background-color: #100e0b;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Blueprint - Aura */
+.aura-bg {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.aura-layer-1 {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(14, 165, 233, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.12) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mix-blend-mode: normal;
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+.aura-layer-2 {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(14, 165, 233, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.06) 1px, transparent 1px);
+  background-size: 10px 10px;
+  mix-blend-mode: normal;
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+.aura-layer-3 {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 60% 40%,
+    rgba(6, 182, 212, 0.35) 0%,
+    transparent 45%
+  );
+  mix-blend-mode: screen;
+  filter: blur(175px);
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .aura-layer-3 {
+    filter: blur(252px);
+  }
 }
 .gradient-border {
   --border-width: 2px;
