@@ -7,11 +7,9 @@ const { badges = [] } = Astro.props;
 <div class="flex flex-wrap gap-2">
   {
     badges.map((badge: { icon: any; name: string }) => (
-      <span
-        class={`flex items-center gap-1 px-2 py-1 text-xs font-medium text-white border-[1px] border-violet-200 rounded-full`}
-      >
-        <badge.icon class="w-4 h-4" />
-        {badge.name}
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full bg-sky-500/10 border border-sky-400/25 text-sky-200 backdrop-blur-xs transition-colors hover:bg-sky-500/20 hover:border-sky-400/40">
+        <badge.icon class="w-3.5 h-3.5" />
+        <span>{badge.name}</span>
       </span>
     ))
   }

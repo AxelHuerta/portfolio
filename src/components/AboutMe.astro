@@ -30,38 +30,43 @@ const skills = [
 ];
 ---
 
-<div>
-    <h1 class="text-5xl font-bold">
-        ¡Hola! Soy <br /> Axel Huerta
+<div class="space-y-6">
+    <p class="font-heading text-sky-400 font-semibold text-xs sm:text-sm tracking-widest uppercase">
+        Desarrollador Web / Full Stack
+    </p>
+    <h1 class="font-heading text-4xl sm:text-6xl font-bold tracking-tight text-zinc-100 leading-[1.1]">
+        Axel Huerta
     </h1>
-    <p class="text-neutral-200">
-        Egresado de la Licenciatura en Computación en la <span
-            class="font-semibold text-main-green"
-            >Universidad Autónoma Metropolitana</span
-        >, apasionado por la programación y el desarrollo web.
+    <p class="text-zinc-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+        Egresado de la Licenciatura en Computación en la <span class="font-semibold text-sky-400">Universidad Autónoma Metropolitana</span>, apasionado por la programación, arquitecturas web y desarrollo de software moderno.
     </p>
 </div>
 
 <!-- links -->
-<div class="flex gap-2">
-    <a href="https://github.com/AxelHuerta" target="_blank">
-        <Button>
-            <span class="flex items-center gap-1">
-                <Github class="w-4 h-4" /> Github
-            </span>
-        </Button>
+<div class="flex items-center gap-3 pt-2">
+    <a
+        href="https://github.com/AxelHuerta"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-white/15 bg-white/[0.04] text-zinc-200 hover:bg-white/[0.08] hover:border-white/30 hover:text-white transition-all shadow-sm"
+    >
+        <Github class="w-4 h-4" />
+        <span>GitHub ↗</span>
     </a>
-    <a href="https://www.linkedin.com/in/axelhuerta/" target="_blank">
-        <Button>
-            <span class="flex items-center gap-1">
-                <LinkedIn class="w-4 h-4" />
-                LinkedIn
-            </span>
-        </Button>
+    <a
+        href="https://www.linkedin.com/in/axelhuerta/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-white/15 bg-white/[0.04] text-zinc-200 hover:bg-white/[0.08] hover:border-white/30 hover:text-white transition-all shadow-sm"
+    >
+        <LinkedIn class="w-4 h-4" />
+        <span>LinkedIn ↗</span>
     </a>
 </div>
 
-<div class="mt-8">
-    <h4 class="text-lg text-ctp-green-400 font-semibold">Habilidades</h4>
+<div class="pt-6 space-y-3">
+    <h4 class="font-heading text-xs uppercase tracking-wider text-zinc-400 font-semibold">
+        Habilidades & Tecnologías
+    </h4>
     <Badges badges={skills} />
 </div>

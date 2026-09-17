@@ -4,22 +4,30 @@ import "@fontsource-variable/montserrat";
 ---
 
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Portfolio | Axel Huerta</title>
-    </head>
-    <body class="text-ctp-text scroll-smooth">
-        <div class="aura-bg">
-            <div class="aura-layer-1" aria-hidden="true"></div>
-            <div class="aura-layer-2" aria-hidden="true"></div>
-            <div class="aura-layer-3" aria-hidden="true"></div>
-            <div class="relative z-1">
-                <slot />
-            </div>
-        </div>
-    </body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>Portfolio | Axel Huerta</title>
+  </head>
+  <body
+    class="bg-[#100e0b] text-zinc-100 selection:bg-sky-500 selection:text-zinc-950 scroll-smooth antialiased"
+  >
+    <div class="aura-bg">
+      <div class="aura-layer-1" aria-hidden="true"></div>
+      <div class="aura-layer-2" aria-hidden="true"></div>
+      <div class="aura-layer-3" aria-hidden="true"></div>
+      <div class="relative z-1">
+        <slot />
+      </div>
+    </div>
+  </body>
 </html>

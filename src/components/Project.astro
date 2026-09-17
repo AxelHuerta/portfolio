@@ -11,87 +11,99 @@ import ImageZoom from "./ui/ImageZoom.astro";
 import Badges from "./ui/Badges.astro";
 
 const projects = [
-    {
-        name: "boliUAM",
-        description:
-            "Aplicación web para que los alumnos de mi carrera lleven un registro de su progreso académico, facilitando la visualización de las materias aprobadas y pendientes.",
-        image: boliUAMImage,
-        code: "https://github.com/AxelHuerta/boliUAM",
-        preview: "https://boliuam.axelhuerta.deno.net/",
-        badages: [TAGS.REACT, TAGS.TYPESCRIPT],
-    },
-    {
-        name: "Plataforma de Experimentación Psicológica – Colaboración con Carrera de Psicología Social",
-        description:
-            "Aplicación web para un experimento psicológico en el que los participantes respondían preguntas y podían ver las respuestas de otros usuarios en tiempo real.",
-        image: experimento,
-        code: "https://github.com/AxelHuerta/metodologia-admin",
-        badages: [TAGS.REACT, TAGS.NODE, TAGS.TYPESCRIPT, TAGS.MONGODB],
-    },
-    {
-        name: "SIIUAM-Next",
-        description:
-            "SIIUAM-Next es una reimaginación del sitema SIIUAM de la UAM-Iztapalapa. Utilizando el servidor de la plataforma, permite conectarse a través de una interfaz más amigable.",
-        image: siiuam,
-        code: "https://github.com/AxelHuerta/siiuam-next",
-        preview: "https://siiuam-next.netlify.app/login",
-        badages: [TAGS.NEXTJS, TAGS.REACT, TAGS.TYPESCRIPT],
-    },
-    // {
-    //   name: "Waifu Randomaizer",
-    //   description:
-    //     "Aplicación web interactiva que consume la Waifu API para mostrar imágenes aleatorias de waifus anime.",
-    //   image: waifu,
-    //   code: "https://github.com/AxelHuerta/WaifuRandomizer",
-    //   preview: "https://waifu-randomizer.vercel.app/",
-    //   badages: [TAGS.REACT, TAGS.TYPESCRIPT],
-    // },
-    {
-        name: "SIIPI-NEXT",
-        description:
-            "SIIPI-NEXT es una reimaginación del sistema SIIPI, una plataforma de visualización de datos de la UAM-I",
-        image: SIIPI,
-        code: "https://github.com/AxelHuerta/siipi-next",
-        preview: "https://siipi-next.vercel.app/login",
-        badages: [TAGS.NEXTJS, TAGS.REACT, TAGS.TYPESCRIPT],
-    },
+  {
+    name: "boliUAM",
+    description:
+      "Aplicación web para que los alumnos de mi carrera lleven un registro de su progreso académico, facilitando la visualización de las materias aprobadas y pendientes.",
+    image: boliUAMImage,
+    code: "https://github.com/AxelHuerta/boliUAM",
+    preview: "https://boliuam.axelhuerta.deno.net/",
+    badages: [TAGS.REACT, TAGS.TYPESCRIPT],
+  },
+  {
+    name: "Plataforma de Experimentación Psicológica – Colaboración con Carrera de Psicología Social",
+    description:
+      "Aplicación web para un experimento psicológico en el que los participantes respondían preguntas y podían ver las respuestas de otros usuarios en tiempo real.",
+    image: experimento,
+    code: "https://github.com/AxelHuerta/metodologia-admin",
+    badages: [TAGS.REACT, TAGS.NODE, TAGS.TYPESCRIPT, TAGS.MONGODB],
+  },
+  {
+    name: "SIIUAM-Next",
+    description:
+      "SIIUAM-Next es una reimaginación del sitema SIIUAM de la UAM-Iztapalapa. Utilizando el servidor de la plataforma, permite conectarse a través de una interfaz más amigable.",
+    image: siiuam,
+    code: "https://github.com/AxelHuerta/siiuam-next",
+    preview: "https://siiuam-next.netlify.app/login",
+    badages: [TAGS.NEXTJS, TAGS.REACT, TAGS.TYPESCRIPT],
+  },
+  // {
+  //   name: "Waifu Randomaizer",
+  //   description:
+  //     "Aplicación web interactiva que consume la Waifu API para mostrar imágenes aleatorias de waifus anime.",
+  //   image: waifu,
+  //   code: "https://github.com/AxelHuerta/WaifuRandomizer",
+  //   preview: "https://waifu-randomizer.vercel.app/",
+  //   badages: [TAGS.REACT, TAGS.TYPESCRIPT],
+  // },
+  {
+    name: "SIIPI-NEXT",
+    description:
+      "SIIPI-NEXT es una reimaginación del sistema SIIPI, una plataforma de visualización de datos de la UAM-I",
+    image: SIIPI,
+    code: "https://github.com/AxelHuerta/siipi-next",
+    preview: "https://siipi-next.vercel.app/login",
+    badages: [TAGS.NEXTJS, TAGS.REACT, TAGS.TYPESCRIPT],
+  },
 ];
 ---
 
-<section class="space-y-12">
-    {
-        projects.map((project) => (
-            <div class="flex flex-col md:flex-row gap-6 bg-[#232030] p-6 border-2 border-[#3d3a56] rounded-xl">
-                <ImageZoom url={project.image} alt={project.name} />
-                <div class="space-y-4">
-                    <h3 class="text-xl font-bold">{project.name}</h3>
-                    <Badges badges={project.badages} />
-                    <p class="text-pretty">{project.description}</p>
-                    <div class="flex gap-3">
-                        {project.code && (
-                            <a href={project.code}>
-                                <Button>
-                                    <span class="flex items-center gap-1 cursor-pointer">
-                                        <Github class="w-4 h-4" />
-                                        Código
-                                    </span>
-                                </Button>
-                            </a>
-                        )}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {
+    projects.map((project) => (
+      <div class="flex flex-col rounded-2xl overflow-hidden bg-white/[0.04] backdrop-blur-xl border border-white/10 shadow-xl transition-all duration-300 hover:border-sky-400/30 hover:bg-white/[0.06]">
+        <div class="w-full h-48 sm:h-56 bg-zinc-900/40 border-b border-white/10 overflow-hidden">
+          <ImageZoom url={project.image} alt={project.name} />
+        </div>
+        <div class="p-6 flex flex-col gap-4 flex-1">
+          <h3 class="font-heading text-xl font-semibold text-zinc-100">
+            {project.name}
+          </h3>
+          <p class="text-sm text-zinc-300 leading-relaxed flex-1">
+            {project.description}
+          </p>
 
-                        {project.preview && (
-                            <a href={project.preview}>
-                                <Button isMain>
-                                    <span class="flex items-center gap-1 cursor-pointer">
-                                        <Link class="w-4 h-4" />
-                                        Preview
-                                    </span>
-                                </Button>
-                            </a>
-                        )}
-                    </div>
-                </div>
-            </div>
-        ))
-    }
-</section>
+          <div class="pt-1">
+            <Badges badges={project.badages} />
+          </div>
+
+          <div class="flex items-center gap-4 pt-2 border-t border-white/10">
+            {project.code && (
+              <a
+                href={project.code}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-sm font-medium text-sky-400 hover:text-sky-300 transition-colors"
+              >
+                <Github class="w-4 h-4" />
+                <span>Código ↗</span>
+              </a>
+            )}
+
+            {project.preview && (
+              <a
+                href={project.preview}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-sm font-medium text-sky-400 hover:text-sky-300 transition-colors"
+              >
+                <Link class="w-4 h-4" />
+                <span>Sitio web ↗</span>
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>

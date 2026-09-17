@@ -8,34 +8,48 @@ import AboutMe from "../components/AboutMe.astro";
 ---
 
 <Layout>
-    <Navbar />
-    <main class="max-w-7xl mx-auto px-15 pb-32">
-        <section
-            id="presentation"
-            class="max-w-md space-y-4 min-h-[85vh] flex flex-col justify-center"
-        >
-            <AboutMe />
-        </section>
+  <Navbar />
+  <main class="max-w-5xl mx-auto px-4 sm:px-8 pb-24 pt-16">
+    <!-- Presentación / Perfil -->
+    <section
+      id="presentation"
+      class="min-h-[85vh] flex flex-col justify-center pt-20 pb-16 scroll-mt-28"
+    >
+      <AboutMe />
+    </section>
 
-        <!-- Experiencia -->
-        <section
-            id="experience"
-            class="min-h-[80vh] flex flex-col justify-center"
-        >
-            <h2 class="text-3xl font-bold my-12">Experiencia</h2>
-            <Experiencia />
-        </section>
+    <!-- Experiencia -->
+    <section id="experience" class="py-20 scroll-mt-28">
+      <h2 class="font-heading text-2xl sm:text-3xl font-bold text-zinc-100 mb-10">
+        Trayectoria profesional
+      </h2>
+      <Experiencia />
+    </section>
 
-        <!-- Proyectos -->
-        <section id="projects" class="pt-12">
-            <h2 class="text-3xl font-bold my-4">Proyectos</h2>
-            <Project />
-        </section>
+    <!-- Proyectos -->
+    <section id="projects" class="py-20 scroll-mt-28">
+      <h2 class="font-heading text-2xl sm:text-3xl font-bold text-zinc-100 mb-10">
+        Proyectos destacados
+      </h2>
+      <Project />
+    </section>
 
-        <!-- Certificados -->
-        <!-- <section id="certificates" class="pt-24">
-      <h2 class="text-3xl font-bold my-4">Certificados</h2>
+    <!-- Certificados -->
+    <section id="certificates" class="py-20 scroll-mt-28">
+      <h2 class="font-heading text-2xl sm:text-3xl font-bold text-zinc-100 mb-10">
+        Formación continua
+      </h2>
       <Certificados />
-    </section> -->
-    </main>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 py-10 px-4 sm:px-8 max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-zinc-400">
+    <p>© {new Date().getFullYear()} Axel Huerta. Todos los derechos reservados.</p>
+    <a
+      href="mailto:axelhuerta.dev@gmail.com"
+      class="text-sky-400 hover:text-sky-300 transition-colors"
+    >
+      axelhuerta.dev@gmail.com
+    </a>
+  </footer>
 </Layout>
